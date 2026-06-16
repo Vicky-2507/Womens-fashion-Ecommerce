@@ -1,0 +1,98 @@
+<section class="hero" [style.background-image]="heroImage">
+  <div class="hero-content">
+    <p class="eyebrow">Velora</p>
+    <h1>Discover Your Perfect Style</h1>
+    <p>
+      Elegant Fashion for Every Woman, Every Occasion.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/products" class="button primary">Shop the Edit</a>
+      <a routerLink="/categories" class="button secondary">Browse Collections</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">New arrivals</p>
+      <h2>Fresh pieces just landed</h2>
+    </div>
+    <a routerLink="/products">See all</a>
+  </div>
+
+  <div class="product-grid">
+    @for (product of newArrivals(); track product.id) {
+      <article class="product-card">
+        <a [routerLink]="['/products', product.id]" class="product-image">
+          <img [src]="product.image" [alt]="product.name" />
+        </a>
+        <div class="product-info">
+          <p>{{ product.category }}</p>
+          <h3>{{ product.name }}</h3>
+          <div class="price-row">
+            <strong>{{ product.discountPrice | currency: 'INR' : 'symbol' : '1.0-0' }}</strong>
+            <span>{{ product.price | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Shop by category</p>
+      <h2>Collections for every plan</h2>
+    </div>
+  </div>
+
+  <div class="category-grid">
+    @for (category of shop.categoryGroups; track category.name) {
+      <a routerLink="/products" [queryParams]="{ category: category.name }" class="category-card">
+        <img [src]="category.image" [alt]="category.name" />
+        <div>
+          <h3>{{ category.name }}</h3>
+          <p>{{ category.description }}</p>
+        </div>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Best sellers</p>
+      <h2>Popular this week</h2>
+    </div>
+  </div>
+
+  <div class="product-grid">
+    @for (product of bestSellers(); track product.id) {
+      <article class="product-card">
+        <a [routerLink]="['/products', product.id]" class="product-image">
+          <img [src]="product.image" [alt]="product.name" />
+        </a>
+        <div class="product-info">
+          <p>{{ product.subCategory }} / {{ product.rating }} stars</p>
+          <h3>{{ product.name }}</h3>
+          <div class="price-row">
+            <strong>{{ product.discountPrice | currency: 'INR' : 'symbol' : '1.0-0' }}</strong>
+            <span>{{ product.price | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section offer-section">
+  <div class="offer-panel">
+    <p class="eyebrow">Seasonal offers</p>
+    <h2>Use VELORA10 for 10% off your order.</h2>
+    <p>Explore the latest pieces and apply the coupon when you place your order.</p>
+    <a routerLink="/products" class="button primary">Shop Offers</a>
+  </div>
+</section>

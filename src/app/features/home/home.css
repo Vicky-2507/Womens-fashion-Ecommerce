@@ -1,0 +1,72 @@
+@import "../../shared/styles/common.css";
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(480px, 78vh, 720px);
+  display: flex;
+  align-items: center;
+  padding: clamp(48px, 8vw, 110px) clamp(18px, 6vw, 92px);
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(17, 24, 39, 0.58), rgba(17, 24, 39, 0.18)),
+    linear-gradient(180deg, rgba(255, 247, 244, 0.14), rgba(236, 253, 245, 0.2));
+}
+
+.hero-content {
+  width: min(680px, 100%);
+}
+
+.hero h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(2.4rem, 5vw, 5.25rem);
+  line-height: 1.02;
+  text-shadow: 0 14px 34px rgba(17, 24, 39, 0.28);
+}
+
+.hero p {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.hero .eyebrow {
+  color: #d7fff6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.offer-section {
+  display: block;
+}
+
+.offer-panel {
+  padding: 28px;
+  border-color: #f8d9c8;
+  background: linear-gradient(135deg, #fff7ed, #f0fdfa);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+}

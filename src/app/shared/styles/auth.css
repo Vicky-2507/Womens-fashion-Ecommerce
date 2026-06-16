@@ -1,0 +1,264 @@
+:host {
+  display: block;
+}
+
+.auth-shell {
+  display: grid;
+  min-height: calc(100vh - 72px);
+  place-items: center;
+  padding: 64px 18px;
+  background: linear-gradient(135deg, #fff6fa 0%, #ffffff 48%, #f4fffd 100%);
+}
+
+.auth-card {
+  display: grid;
+  gap: 20px;
+  padding: clamp(28px, 5vw, 44px);
+  border: 1px solid #eadde4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(23, 18, 26, 0.12);
+}
+
+.auth-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(23, 18, 26, 0.28);
+  animation: popup-backdrop-in 220ms ease both;
+}
+
+.auth-popup {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  width: min(390px, 100%);
+  padding: 18px;
+  border: 1px solid rgba(216, 58, 115, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(23, 18, 26, 0.22);
+  animation: popup-card-in 260ms ease both;
+}
+
+.auth-popup-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--rose), #221923);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.auth-popup.error .auth-popup-mark {
+  background: linear-gradient(135deg, #dc2626, #17121a);
+}
+
+.auth-popup strong,
+.auth-popup p {
+  margin: 0;
+}
+
+.auth-popup strong {
+  color: #17121a;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.auth-popup p {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.auth-topbar,
+.auth-brand {
+  display: flex;
+  align-items: center;
+}
+
+.auth-topbar {
+  justify-content: flex-start;
+  gap: 18px;
+}
+
+.auth-brand {
+  gap: 10px;
+  color: #17121a;
+  font-weight: 900;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--rose), #221923);
+  box-shadow: 0 8px 18px rgba(216, 58, 115, 0.16);
+}
+
+.auth-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-heading h1 {
+  margin: 0;
+  color: #17121a;
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1.05;
+}
+
+.auth-heading p,
+.auth-note,
+.auth-switch,
+.auth-links {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.field-group label {
+  color: #17121a;
+  font-size: 0.93rem;
+  font-weight: 800;
+}
+
+.field-group input {
+  min-height: 48px;
+  border-color: #e6d8df;
+  border-radius: 8px;
+  padding-inline: 14px;
+  background: #fffdfd;
+}
+
+.field-group input:focus {
+  outline: 4px solid rgba(216, 58, 115, 0.12);
+  border-color: var(--rose);
+}
+
+.field-group input.invalid {
+  border-color: #dc2626;
+  background: #fff7f7;
+}
+
+.field-error {
+  margin: 0;
+  color: #c02626;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.form-message,
+.success-text {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.form-message {
+  background: #fff1f3;
+}
+
+.success-text {
+  background: #ecfdf5;
+  color: var(--teal);
+}
+
+.auth-submit {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 8px;
+}
+
+.auth-switch {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 2px;
+  font-weight: 800;
+}
+
+.auth-switch a {
+  color: var(--rose-dark);
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-weight: 800;
+}
+
+.auth-links a {
+  color: var(--rose-dark);
+}
+
+.auth-switch a,
+.auth-links a {
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+.auth-switch a:hover,
+.auth-links a:hover {
+  background: #fff0f6;
+}
+
+@media (max-width: 640px) {
+  .auth-shell {
+    min-height: calc(100vh - 164px);
+    padding: 34px 14px;
+  }
+
+  .auth-switch {
+    display: grid;
+    text-align: center;
+  }
+
+  .auth-links {
+    display: grid;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .auth-brand {
+    justify-content: center;
+  }
+}
+
+@keyframes popup-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

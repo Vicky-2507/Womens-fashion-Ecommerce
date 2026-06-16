@@ -1,0 +1,25 @@
+@import "../../shared/styles/common.css";
+
+.category-detail {
+  display: grid;
+  grid-template-columns: minmax(180px, 42%) 1fr;
+}
+
+.category-detail img {
+  min-height: 260px;
+}
+
+.category-detail .pill-list {
+  margin: 18px 0;
+}
+
+.text-link {
+  color: var(--rose-dark);
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .category-detail {
+    grid-template-columns: 1fr;
+  }
+}
