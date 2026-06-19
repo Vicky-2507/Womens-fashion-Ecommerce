@@ -1,4 +1,3 @@
-@import '../../shared/styles/common.css';
 
 :host {
   --purple: #9643e8;
@@ -36,16 +35,6 @@
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08)),
     #f2e8ff;
-}
-
-.address-story::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 82% 42%, rgba(255, 255, 255, 0.9) 0 24px, transparent 25px),
-    radial-gradient(circle at 72% 48%, rgba(255, 255, 255, 0.78) 0 15px, transparent 16px);
-  opacity: 0.7;
 }
 
 .story-copy {
@@ -103,37 +92,13 @@
   height: 385px;
 }
 
-.cloud,
-.cloud::before,
-.cloud::after {
+.cloud {
   position: absolute;
   display: block;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
-}
-
-.cloud {
   width: 74px;
   height: 14px;
-}
-
-.cloud::before,
-.cloud::after {
-  content: '';
-}
-
-.cloud::before {
-  width: 34px;
-  height: 34px;
-  left: 14px;
-  bottom: 0;
-}
-
-.cloud::after {
-  width: 46px;
-  height: 46px;
-  left: 38px;
-  bottom: 0;
 }
 
 .cloud-one {
@@ -181,17 +146,6 @@
   box-shadow: 0 24px 40px rgba(111, 43, 213, 0.14);
 }
 
-.house::before {
-  content: '';
-  position: absolute;
-  right: 124px;
-  bottom: 0;
-  width: 128px;
-  height: 108px;
-  border-radius: 8px 0 0 18px;
-  background: linear-gradient(180deg, #8d48da, #6b35b8);
-}
-
 .roof {
   position: absolute;
   top: -42px;
@@ -202,90 +156,54 @@
   background: linear-gradient(135deg, #8a39dc, #b05cf2);
 }
 
-.tower {
+.door,
+.window {
   position: absolute;
-  right: -34px;
-  bottom: 0;
-  width: 44px;
-  height: 118px;
-  border-radius: 80% 80% 10px 10px;
-  background: rgba(190, 141, 245, 0.35);
-  transform: skewX(-14deg);
+  border-radius: 4px;
+  background: #382164;
 }
 
 .door {
-  position: absolute;
   right: 44px;
   bottom: 0;
   width: 42px;
   height: 66px;
   border-radius: 20px 20px 4px 4px;
-  background: #382164;
 }
 
 .window {
-  position: absolute;
-  width: 28px;
-  height: 44px;
+  right: 38px;
+  top: 36px;
+  width: 30px;
+  height: 42px;
   border: 4px solid #f5eaff;
-  border-radius: 4px;
   background: rgba(255, 255, 255, 0.14);
 }
 
-.window-left {
-  left: -86px;
-  bottom: 32px;
-}
-
-.window-right {
-  right: 38px;
-  top: 36px;
+.scooter,
+.scooter .box,
+.scooter .body,
+.wheel {
+  position: absolute;
 }
 
 .scooter {
-  position: absolute;
   bottom: 12px;
   left: 8px;
   width: 182px;
-  height: 118px;
+  height: 92px;
 }
 
 .scooter .box {
-  position: absolute;
   left: 0;
-  top: 30px;
+  top: 24px;
   width: 58px;
   height: 48px;
   border-radius: 4px;
   background: #d5b082;
-  box-shadow: inset 0 -10px 0 rgba(123, 79, 47, 0.1);
-}
-
-.scooter .rider {
-  position: absolute;
-  left: 76px;
-  top: 4px;
-  width: 44px;
-  height: 92px;
-  border-radius: 28px 28px 14px 14px;
-  background: linear-gradient(180deg, #8143d9 0 48%, #26344d 49%);
-  transform: rotate(-10deg);
-}
-
-.scooter .rider::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: 11px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #f6c89a;
-  box-shadow: 2px -8px 0 #6d3acb;
 }
 
 .scooter .body {
-  position: absolute;
   right: 18px;
   bottom: 22px;
   left: 44px;
@@ -294,21 +212,7 @@
   background: linear-gradient(180deg, #9c4bea, #7a35d5);
 }
 
-.scooter .body::after {
-  content: '';
-  position: absolute;
-  right: -18px;
-  top: -18px;
-  width: 34px;
-  height: 24px;
-  border: 5px solid #4f2f8e;
-  border-bottom: 0;
-  border-left: 0;
-  border-radius: 0 18px 0 0;
-}
-
 .wheel {
-  position: absolute;
   bottom: 0;
   width: 44px;
   height: 44px;
@@ -317,37 +221,13 @@
   background: #ffffff;
 }
 
-.wheel-left {
+.wheel-left,
+.window-left {
   left: 54px;
 }
 
 .wheel-right {
   right: 12px;
-}
-
-.route {
-  position: absolute;
-  right: 16px;
-  bottom: 4px;
-  width: 250px;
-  height: 110px;
-  border-bottom: 3px dashed rgba(151, 71, 255, 0.42);
-  border-left: 3px dashed rgba(151, 71, 255, 0.42);
-  border-radius: 0 0 0 100px;
-  transform: rotate(8deg);
-}
-
-.paper-plane {
-  position: absolute;
-  right: 8px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 40px solid #9c4bea;
-  transform: rotate(-36deg);
-  filter: drop-shadow(0 10px 16px rgba(111, 43, 213, 0.2));
 }
 
 .address-form {

@@ -1,4 +1,4 @@
-:host {
+:root {
   --ink: #17121a;
   --muted: #667085;
   --line: #eadde4;
@@ -8,8 +8,14 @@
   --rose-dark: #b92d61;
   --teal: #0b7f78;
   --shadow: 0 16px 45px rgba(23, 18, 26, 0.08);
-  display: block;
+}
+
+body {
   color: var(--ink);
+}
+
+app-root {
+  display: block;
 }
 
 a {
